@@ -2,6 +2,11 @@
 
 A fully responsive and interactive Poll Widget built using **React + TypeScript** with **localStorage persistence**. This widget allows users to vote on questions, view live results with animated progress bars, and embed it in standalone HTML pages.
 
+🔗 **Live Demo:** [Poll Widget](https://poll-widget.vercel.app/)
+
+🖼️ **Screenshot:**
+![Poll Widget Demo](./public/image.png)
+
 ---
 
 ## 🚀 Features
@@ -100,8 +105,6 @@ Create `poll_page.html` and add the following:
 
 Open `poll_page.html` in a browser to see the widget in action.
 
-<img src="../my-poll-widget/public/image.png" alt="Poll Widget" width="200" height="200" style="border: 1px solid #ddd; border-radius: 10px;" />
-
 **🔹 If you see your old submissions, clear the localStorage, refresh, and use the poll again.**
 
 ---
@@ -141,7 +144,7 @@ poll-widget/
 │   ├── App.tsx           # Main React Application
 │   ├── constants.ts      # Global constants
 │   ├── index.tsx         # React entry point
-│── public/               # Static files
+│── public/               # Static files (includes image.png for README)
 │── build/                # Production build (after `npm run build`)
 │── tests/                # Jest & React Testing Library tests
 │── package.json          # Dependencies & scripts
