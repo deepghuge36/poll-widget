@@ -100,6 +100,8 @@ Create `poll_page.html` and add the following:
 
 Open `poll_page.html` in a browser to see the widget in action.
 
+<img src="../my-poll-widget/public/image.png" alt="Poll Widget" width="200" height="200" style="border: 1px solid #ddd; border-radius: 10px;" />
+
 **🔹 If you see your old submissions, clear the localStorage, refresh, and use the poll again.**
 
 ---

@@ -25,6 +25,8 @@ const pollData: PollData[] = [
       },
     ],
   },
+  // you can add more polls here
+
   // {
   //   id: 'poll2',
   //   questions: [
