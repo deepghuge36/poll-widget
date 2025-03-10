@@ -17,6 +17,28 @@ A fully responsive and interactive Poll Widget built using **React + TypeScript*
 - **Netflix-Themed UI:** Uses a dark red and black color scheme.
 - **Standalone Embed:** Can be used in other HTML pages with `<script>` integration.
 - **Unit Tested:** Includes Jest + React Testing Library tests.
+- **Code Quality:** Implemented **Husky, Prettier, and ESLint** for code formatting, linting, and pre-commit checks.
+
+---
+
+## 🛠️ Technical Choices & Decisions
+
+- **React + TypeScript:** Ensures type safety and scalability.
+- **LocalStorage for Vote Persistence:** Enables users to retain their votes after a refresh without requiring a backend.
+- **Component-Based Design:** Each part of the widget (PollWidget, Question, AnswerOption) is modular and reusable.
+- **CSS Modules for Styling:** Prevents class name conflicts and keeps styles scoped.
+- **Jest + React Testing Library:** Ensures functionality and UI consistency through unit tests.
+- **Standalone Integration:** The widget can be embedded into any HTML page without requiring React on the host page.
+- **Husky, Prettier, and ESLint:** Enforces code quality, consistency, and formatting before commits.
+
+---
+
+## 🔍 Potential Improvements
+
+- **Backend API Integration:** Store votes in a database instead of `localStorage` for better scalability.
+- **WebSocket Updates:** Enable real-time vote synchronization across users.
+- **Improved UI Animations:** Enhance the voting experience with smoother transitions and effects.
+- **Accessibility Enhancements:** Improve keyboard navigation and screen reader support.
 
 ---
 
@@ -170,9 +192,8 @@ Feel free to contribute by creating a pull request! If you encounter any issues,
 
 ## 🎯 Next Steps
 
-🔹 **Enhance UI:** Add animations when selecting answers.  
-🔹 **API Integration:** Replace `pollData.ts` with a backend API.  
-🔹 **Multiple Widgets:** Support multiple polls on the same page.
+🔹 **Enhance UI:** Add animations.  
+🔹 **API Integration:** Replace `pollData.ts` with a backend API.
 
 ---
 
