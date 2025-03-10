@@ -1,46 +1,178 @@
-# Getting Started with Create React App
+# Poll Widget
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully responsive and interactive Poll Widget built using **React + TypeScript** with **localStorage persistence**. This widget allows users to vote on questions, view live results with animated progress bars, and embed it in standalone HTML pages.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- **Vote Persistence:** Stores votes in `localStorage`, so they remain after refresh.
+- **Real-Time Progress:** Updates percentages dynamically with animated bars.
+- **One Active Question at a Time:** Selecting an option in one question removes the highlight from others.
+- **Netflix-Themed UI:** Uses a dark red and black color scheme.
+- **Standalone Embed:** Can be used in other HTML pages with `<script>` integration.
+- **Unit Tested:** Includes Jest + React Testing Library tests.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📦 Installation & Setup
 
-### `npm test`
+### **1️⃣ Clone the Repository**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+git clone https://github.com/your-repo-url.git
+cd poll-widget
+```
 
-### `npm run build`
+### **2️⃣ Install Dependencies**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm install  # or yarn install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **3️⃣ Run the Development Server**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+npm start  # or yarn start
+```
 
-### `npm run eject`
+The widget will be available at `http://localhost:3000/`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### **4️⃣ Build the Widget for Production**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+npm run build  # or yarn build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This generates production files in the `build/` directory.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## 🛠️ Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **Embedding Poll Widget in an HTML Page**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can use this widget **without React** in standalone HTML pages.
+
+### **1️⃣ Include the Widget in an HTML Page**
+
+Create `poll_page.html` and add the following:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poll Widget</title>
+    <link rel="stylesheet" href="./build/static/css/main.css" />
+    <style>
+      #poll-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 500px;
+        background-color: #141414;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Embedded Poll Widget</h1>
+    <div id="poll-container"></div>
+    <script src="./build/static/js/main.js"></script>
+    <script>
+      window.onload = function () {
+        if (window.PollWidgetLibrary) {
+          PollWidgetLibrary.mountPollWidget('poll-container', 'poll1')
+        } else {
+          console.error('PollWidgetLibrary is not loaded')
+        }
+      }
+    </script>
+  </body>
+</html>
+```
+
+### **2️⃣ Open the HTML File**
+
+Open `poll_page.html` in a browser to see the widget in action.
+
+**🔹 If you see your old submissions, clear the localStorage, refresh, and use the poll again.**
+
+---
+
+## ✅ Running Tests
+
+The project includes **unit tests** for key components using **Jest + React Testing Library**.
+
+### **Run All Tests**
+
+```sh
+npm test
+```
+
+### **Run Tests for a Single Component**
+
+```sh
+npm test src/components/PollWidget.test.tsx
+```
+
+### **Fix Tests Automatically**
+
+```sh
+npm run test -- --watch
+```
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+poll-widget/
+│── src/
+│   ├── components/       # UI Components (PollWidget, Question, AnswerOption)
+│   ├── data/             # Poll data (pollData.ts)
+│   ├── types/            # TypeScript interfaces (Poll.ts)
+│   ├── App.tsx           # Main React Application
+│   ├── constants.ts      # Global constants
+│   ├── index.tsx         # React entry point
+│── public/               # Static files
+│── build/                # Production build (after `npm run build`)
+│── tests/                # Jest & React Testing Library tests
+│── package.json          # Dependencies & scripts
+│── README.md             # This documentation
+```
+
+---
+
+## 📌 Notes
+
+- The widget **automatically loads votes from `localStorage`**.
+- Clicking an option **updates the vote count and progress bar in real-time**.
+- **One question is active at a time**—selecting a new question removes selection from the previous one.
+- **Unit tests ensure stability**—run `npm test` before deployment.
+
+---
+
+## ✨ Contribution
+
+Feel free to contribute by creating a pull request! If you encounter any issues, please open a GitHub issue.
+
+---
+
+## 🎯 Next Steps
+
+🔹 **Enhance UI:** Add animations when selecting answers.  
+🔹 **API Integration:** Replace `pollData.ts` with a backend API.  
+🔹 **Multiple Widgets:** Support multiple polls on the same page.
+
+---
+
+## 📝 License
+
+MIT License. Free to use and modify.
+
+**🚀 Built with React, TypeScript, and Passion!** 🎬🔥

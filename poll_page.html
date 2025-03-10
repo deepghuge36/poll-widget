@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poll Widget</title>
+    <link rel="stylesheet" href="./build/static/css/main.461d0094.css" />
+    <style>
+      #poll-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 500px;
+        background-color: #141414;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Embedded Poll Widget</h1>
+
+    <!-- The div where the widget will be injected -->
+    <div id="poll-container"></div>
+
+    <!-- Load the React Widget -->
+    <script src="./build/static/js/main.a1f96835.js"></script>
+
+    <script>
+      window.onload = function () {
+        if (window.PollWidgetLibrary) {
+          PollWidgetLibrary.mountPollWidget('poll-container', 'poll1')
+        } else {
+          console.error('PollWidgetLibrary is not loaded')
+        }
+      }
+    </script>
+  </body>
+</html>

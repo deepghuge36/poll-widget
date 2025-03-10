@@ -1,0 +1,37 @@
+.container {
+  background-color: #141414; /* Netflix dark theme */
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.5); /* Red shadow for effect */
+}
+
+.title {
+  font-size: 1.8em;
+  color: #e50914; /* Netflix Red */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.container {
+  background-color: #141414; /* Netflix dark theme */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #e50914; /* Netflix red */
+}
+
+.errorContainer {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+}

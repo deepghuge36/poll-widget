@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #141414;
+  color: #e50914;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.loadingText {
+  animation: pulse 1.5s infinite ease-in-out;
+}

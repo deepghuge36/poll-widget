@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import PollWidget from './components/PollWidget'
+import { DISPLAYED_POLLS_KEY } from './constants'
+import pollData from './data/pollData'
+import './App.css' // Import styles
 
-function App() {
+const App: React.FC = () => {
+  const [displayedPolls, setDisplayedPolls] = useState<string[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      try {
+        const storedDisplayedPolls = localStorage.getItem(DISPLAYED_POLLS_KEY)
+        const initialPolls = storedDisplayedPolls
+          ? JSON.parse(storedDisplayedPolls)
+          : []
+        setDisplayedPolls(initialPolls)
+      } catch (error) {
+        console.error('Error loading displayed polls:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }, 1000) // Add delay for better UX
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isLoading ? (
+        <div className="loadingContainer">
+          <div className="loadingText">Loading...</div>
+        </div>
+      ) : (
+        <>
+          {pollData
+            .filter((poll) => !displayedPolls.includes(poll.id))
+            .map((poll) => (
+              <PollWidget key={poll.id} pollId={poll.id} />
+            ))}
+        </>
+      )}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

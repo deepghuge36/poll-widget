@@ -1,0 +1,14 @@
+.container {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #444;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Highlight active question */
+.active {
+  border: 2px solid #e50914; /* Netflix red border for active question */
+  background-color: rgba(229, 9, 20, 0.1); /* Light red background */
+  padding: 10px;
+  border-radius: 5px;
+}
