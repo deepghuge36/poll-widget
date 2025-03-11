@@ -4,6 +4,9 @@
   padding: 20px;
   margin: 20px;
   box-shadow: 0 2px 4px rgba(255, 0, 0, 0.5); /* Red shadow for effect */
+  position: relative;
+  z-index: 9999;
+  top: 67px;
 }
 
 .title {

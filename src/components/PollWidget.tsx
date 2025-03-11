@@ -13,6 +13,11 @@ interface PollWidgetProps {
 const PollWidget: React.FC<PollWidgetProps> = ({ pollId }) => {
   const poll = pollData.find((p) => p.id === pollId)
   const [results, setResults] = useState<PollResults>({})
+  const [triggerError] = useState(false)
+
+  if (triggerError) {
+    throw new Error('Simulated error in PollWidget') // Simulating an error
+  }
 
   // Load votes from localStorage when the widget loads
   useEffect(() => {

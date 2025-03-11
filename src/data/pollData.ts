@@ -25,40 +25,30 @@ const pollData: PollData[] = [
       },
     ],
   },
-  // you can add more polls here
 
-  // {
-  //   id: 'poll2',
-  //   questions: [
-  //     {
-  //       id: 'q3',
-  //       text: 'What is your favorite color?',
-  //       answerOptions: [
-  //         { id: 'a7', text: 'Red' },
-  //         { id: 'a8', text: 'Blue' },
-  //         { id: 'a9', text: 'Green' },
-  //       ],
-  //     },
-  //     {
-  //       id: 'q4',
-  //       text: 'What is your hair color?',
-  //       answerOptions: [
-  //         { id: 'a10', text: 'Black' },
-  //         { id: 'a11', text: 'Bllonde' },
-  //         { id: 'a12', text: 'Brown' },
-  //       ],
-  //     },
-  //     {
-  //       id: 'q5',
-  //       text: 'How you like the Opinary test:',
-  //       answerOptions: [
-  //         { id: 'a4', text: 'It was great and so challenging.' },
-  //         { id: 'a5', text: 'Not bad, but you can improve.' },
-  //         { id: 'a6', text: 'It was a nightmare, never again.' },
-  //       ],
-  //     },
-  //   ],
-  // },
+  {
+    id: 'poll2',
+    questions: [
+      {
+        id: 'q3',
+        text: 'What is your favorite color?',
+        answerOptions: [
+          { id: 'a7', text: 'Red' },
+          { id: 'a8', text: 'Blue' },
+          { id: 'a9', text: 'Green' },
+        ],
+      },
+      {
+        id: 'q4',
+        text: 'What is your hair color?',
+        answerOptions: [
+          { id: 'a10', text: 'Black' },
+          { id: 'a11', text: 'Bllonde' },
+          { id: 'a12', text: 'Brown' },
+        ],
+      },
+    ],
+  },
 ]
 
 export default pollData

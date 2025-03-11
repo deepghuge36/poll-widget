@@ -1,0 +1,37 @@
+.navbar {
+  background-color: #141414; /* Netflix dark background */
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e50914; /* Netflix red */
+  text-decoration: none;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+  padding-right: 50px;
+}
+
+.navLink {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  font-weight: medium;
+}
+
+.navLink:hover {
+  color: #e50914; /* Netflix red hover effect */
+}
