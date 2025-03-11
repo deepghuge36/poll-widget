@@ -9,10 +9,10 @@ const NavBar: React.FC = () => {
         Poll Data
       </Link>
       <div className={styles.navLinks}>
-        <Link to="/poll1" className={styles.navLink}>
+        <Link to="/page1" className={styles.navLink}>
           Poll 1
         </Link>
-        <Link to="/poll2" className={styles.navLink}>
+        <Link to="/page2" className={styles.navLink}>
           Poll 2
         </Link>
       </div>

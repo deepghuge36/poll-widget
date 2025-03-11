@@ -9,7 +9,7 @@ const ErrorPage: React.FC = () => {
       <p className={styles.errorMessage}>
         An unexpected error occurred. Please try again later.
       </p>
-      <Link to="/poll1" className={styles.homeButton}>
+      <Link to="/" className={styles.homeButton}>
         Go to Home
       </Link>
     </div>

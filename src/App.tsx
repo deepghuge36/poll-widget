@@ -62,10 +62,10 @@ const App: React.FC = () => {
               </div>
             ) : (
               <Routes>
-                <Route path="/" element={<Navigate to="/poll1" />} />
-                <Route path="/poll1" element={<PollWidget pollId="poll1" />} />
-                <Route path="/poll2" element={<PollWidget pollId="poll2" />} />
-                <Route path="*" element={<h2>Page Not Found</h2>} />
+                <Route path="/" element={<Navigate to="/page1" />} />
+                <Route path="/page1" element={<PollWidget pollId="poll1" />} />
+                <Route path="/page2" element={<PollWidget pollId="poll2" />} />
+                <Route path="*" element={<ErrorPage />} />
               </Routes>
             )}
           </div>
