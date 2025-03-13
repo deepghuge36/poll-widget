@@ -41,7 +41,9 @@ const Question: React.FC<QuestionProps> = ({
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.questionText}>{questionText}</h3>
+      <h3 className={styles.questionText}>
+        {questionText} (Total Votes: {totalVotes})
+      </h3>
       {answerOptions.map((answer) => (
         <AnswerOption
           key={answer.id}
